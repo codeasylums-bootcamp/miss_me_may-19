@@ -30,19 +30,19 @@
                     <form method="POST">
                         <div class="field has-addons">
                             <div class="control is-expanded">
-                                <input class="input" name="pollquestion" id="q" type="text" placeholder="City Name">
+                                <input class="input" name="pollquestion" id="q" type="text" placeholder="poll question">
                             </div>
                             
                             <div class="control">
                                 <button class="button is-info" >
-                                    question
+                                    post poll
                                 </button>
                             </div>
                         </div>
 
                         <div class="field has-addons">
                           <div class="control is-expanded">
-                              <input class="input" name="option1" id="op1" type="text" placeholder="City Name">
+                              <input class="input" name="option1" id="op1" type="text" placeholder="option1">
                           </div>
                           
                           <div class="control">
@@ -52,7 +52,7 @@
 
                       <div class="field has-addons">
                         <div class="control is-expanded">
-                            <input class="input" name="option2" id="op2" type="text" placeholder="City Name">
+                            <input class="input" name="option2" id="op2" type="text" placeholder="option2">
                         </div>
                         
                         <div class="control">
@@ -80,15 +80,19 @@
                                                 <form >
                                                 <span class="title" id="ques">{{ weather.poll }}</span>
                                                 <br>
+                                                <br>
                                                 
                                                     <button class="button is-info" method="GET" onClick="fun1()" id="oop1">
                                                        {{ weather.op1 }} 
+
                                                     </button>
+                                                    <span class="title" id="ques">{{ weather.c1 }}</span>
                                                 <br>
                                                 <br>
                                                     <button class="button is-info" method="GET" onClick="fun2()" id="oop2">
                                                         {{ weather.op2 }}
                                                     </button>
+                                                    <span class="title" id="ques">{{ weather.c2 }}</span>
                                                 </form>   
                                             </p>
                                     </div> 
