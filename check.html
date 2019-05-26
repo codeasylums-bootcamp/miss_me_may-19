@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./poll.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+  <form id="frml" method="post">
+    <h1>Let's Create Your poll</h1>
+    <br>
+
+
+
+
+
+
+    <h2>What's your Query</h2>
+    <fieldset>
+      <textarea name="pollquestion" id="query" placeholder="Type your Query here..." tabindex="5" required autofocus></textarea>
+    </fieldset>
+    <br>
+    <div id="parent">
+
+
+    <div id="choices">
+
+
+    <h3>Choice 1</h3>
+    <fieldset>
+      <input placeholder="First Choice" name="option1" id="choice_one" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    </div>
+    <h3>Choice 2</h3>
+    <fieldset>
+      <input placeholder="Second Choice" name="option2" id="choice_two" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    </div>
+    <fieldset>
+      <button name="add" type="submit" id="frml-choice" data-submit="...Sending" onclick="addE()">Add Choice</button>
+    </fieldset>
+    <h3>Choice 3</h3>
+    <fieldset>
+      <input placeholder="Third Choice(optional)" name="option3" id="choice_three" type="text" tabindex="1">
+    </fieldset>
+    <h3>Choice 4</h3>
+    <fieldset>
+      <input placeholder="Forth Choice(optional)" name="option4" id="choice_four" type="text" tabindex="1">
+    </fieldset>
+
+    <br>
+
+
+
+    <fieldset>
+      <button name="submit" type="submit" id="frml-submit" data-submit="...Sending" onclick="myFunction()">Submit</button>
+    </fieldset>
+
+  </form>
+</div>
+
+  </body>
+  <script type="text/javascript">
+  var block_insert;
+  var container_block;
+  function myFunction() {
+      var inputQ = document.getElementById("query").value;
+      var inputOne = document.getElementById("choice_one").value;
+      var inputTwo = document.getElementById("choice_two").value;
+      var inputThree = document.getElementById("choice_three").value;
+      var inputFour = document.getElementById("choice_four").value;
+      console.log(inputOne);
+
+}
+block_insert = document.createElement('div');
+block_insert.innerHTML = 'This demo DIV block was inserted into the page using JavaScript.' ;
+
+
+var v=2;
+  function addE(){
+    v++;
+    if (v <5) {
+      /*document.getElementById("container").appendChild("choices");*/
+      document.parent.innerHTML += document.parent.choices;
+
+    }
+  }
+
+
+  </script>
+
+</html>
