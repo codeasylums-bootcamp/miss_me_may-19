@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 
-    
+
 
 <body>
     <section class="hero is-primary">
@@ -20,7 +20,7 @@
                     What's poll you wanna post?
                 </h1>
             </div>
-            
+
         </div>
     </section>
     <section class="section">
@@ -32,9 +32,9 @@
                             <div class="control is-expanded">
                                 <input class="input" name="pollquestion" id="q" type="text" placeholder="City Name">
                             </div>
-                            
+
                             <div class="control">
-                                <button class="button is-info" onclick="">
+                                <button class="button is-info" onclick="send()">
                                     question
                                 </button>
                             </div>
@@ -44,9 +44,9 @@
                           <div class="control is-expanded">
                               <input class="input" name="option1" id="op1" type="text" placeholder="City Name">
                           </div>
-                          
+
                           <div class="control">
-                             
+
                           </div>
                       </div>
 
@@ -54,18 +54,18 @@
                         <div class="control is-expanded">
                             <input class="input" name="option2" id="op2" type="text" placeholder="City Name">
                         </div>
-                        
+
                         <div class="control">
-                           
+
                         </div>
                     </div>
                     <div class="field has-addons">
                         <div class="control is-expanded">
                             <input class="input" name="option3" id="op3" type="text" placeholder="City Name">
                         </div>
-                        
+
                         <div class="control">
-                           
+
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@
                     {% for weather in weather_data %}
                     <div class="box">
                         <article class="media">
-                            
+
                             <div class="media-content">
                                     <div class="content">
                                             <p>
@@ -90,7 +90,7 @@
                                                 <span class="subtitle">{{ weather.po1 }}° F</span>
                                                 <br> {{ weather.op2 }}
                                             </p>
-                                    </div> 
+                                    </div>
                             </div>
                         </article>
                     </div>
@@ -102,7 +102,7 @@
     <footer class="footer">
     </footer>
   <script>
-      
+  function send(){
         var question;
         var optionO;
         var optionTwo;
@@ -111,31 +111,33 @@
         optionO = document.getElementById("op1").value;
         optionTwo = document.getElementById("op2").value;
         optionThree = document.getElementById("op3").value;
-        
+
         var obj = {
             pollquestison: question,
             option1: optionO,
             option2: optionTwo,
             option3: optionThree
-            
+
         };
+        console.log(obj);
 
         let xhttp=new XMLHttpRequest();
         xhttp.open("POST","http://127.0.0.1:5000/enter",true);
         xhttp.send(obj);
-            
+
+          }
         /*function XHR() {
             axios.post('http://127.0.0.1:5000/enter', {
-             name:"dfghjkl" 
-             
-             
+             name:"dfghjkl"
+
+
             })
             .then((response) => {
 
             })
         }*/
-    
-            
+
+
             </script>
 </body>
 </html>
