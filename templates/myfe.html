@@ -17,7 +17,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    What poll you wanna post?
+                    wanna post a poll??
                 </h1>
             </div>
             
@@ -70,7 +70,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    {% for weather in weather_data %}
+                    {% for data in return_data %}
                     <div class="box">
                         <article class="media">
                             
@@ -78,21 +78,21 @@
                                     <div class="content">
                                             <p>
                                                 <form >
-                                                <span class="title" id="ques">{{ weather.poll }}</span>
+                                                <span class="title" id="ques">{{ data.poll }}</span>
                                                 <br>
                                                 <br>
                                                 
                                                     <button class="button is-info" method="GET" onClick="fun1()" id="oop1">
-                                                       {{ weather.op1 }} 
+                                                       {{ data.op1 }} 
 
                                                     </button>
-                                                    <span class="title" id="ques">{{ weather.c1 }}</span>
+                                                    <span class="title" id="ques">{{ data.c1 }}</span>
                                                 <br>
                                                 <br>
                                                     <button class="button is-info" method="GET" onClick="fun2()" id="oop2">
-                                                        {{ weather.op2 }}
+                                                        {{ data.op2 }}
                                                     </button>
-                                                    <span class="title" id="ques">{{ weather.c2 }}</span>
+                                                    <span class="title" id="ques">{{ data.c2 }}</span>
                                                 </form>   
                                             </p>
                                     </div> 

@@ -81,31 +81,31 @@ def index():
             #db.session.add(new_city_obj)
             #db.session.commit()
         
-    cities = Post.query.all()
+    alltuples = Post.query.all()
 
     
-    weather_data = []
+    toreturn = []
 
-    for city in cities:
+    for i in alltuples:
 
         
 
-        weather = {
-            'poll' : city.poll,
-            'op1' : city.option1,
-            'op2' : city.option2,
-            'op3' : city.option3,
-            'op4':city.option4,
-            'c1':city.c1,
-            'c2':city.c2,
-            'c3':city.c3,
-            'c4':city.c4
+        objdata = {
+            'poll' : i.poll,
+            'op1' : i.option1,
+            'op2' : i.option2,
+            'op3' : i.option3,
+            'op4':i.option4,
+            'c1':i.c1,
+            'c2':i.c2,
+            'c3':i.c3,
+            'c4':i.c4
         }
 
-        weather_data.append(weather)
+        toreturn.append(objdata)
 
 
-    return render_template('myfe.html',weather_data=weather_data)
+    return render_template('myfe.html',return_data=toreturn)
   
 
 
